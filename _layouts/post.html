@@ -17,10 +17,10 @@ layout: default
 {% if page.image.feature %}
 <div class="post-image-feature">
 <picture class="lazyload">
-  <source media="(max-width: 480px)" srcset="{{ cloudinary | append: 'w_480,f_auto,q_auto' }}/img/{{ page.image.feature }}"> 
-  <source media="(min-width: 800px)" srcset="{{ cloudinary | append: 'f_auto,q_auto'  }}/img/{{ page.image.feature }}"> 
+  <source media="(max-width: 480px)" srcset="{{ cloudinary  }}/{{ page.image.feature }}"> 
+  <source media="(min-width: 800px)" srcset="{{ cloudinary }}/{{ page.image.feature }}"> 
   <img class="feature-image lazyload" data-src=
-  "{{ cloudinary | append: 'f_auto,q_auto' }}/img/{{ page.image.feature }}"
+  "{{ cloudinary }}/{{ page.image.feature }}"
   alt="{{ page.title | escape }}">
 </picture>
   {% if page.image.credit %}
@@ -40,7 +40,7 @@ layout: default
     <div class="post-meta">
 			<div class="avatar-box">
 			{% if author.avatar %}
-			<img class="avatar lazyload" data-src="{{ cloudinary | append: 'w_96,f_auto,q_auto' }}/img/{{ author.avatar }}" alt="{{ author.avatar }}" title="{{ author.shoutout }}">
+			<img class="avatar lazyload" data-src="{{ cloudinary }}/{{ author.avatar }}" alt="{{ author.avatar }}" title="{{ author.shoutout }}">
 			{% endif %}
 			</div>
 			<div>
