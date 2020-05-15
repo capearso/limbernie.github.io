@@ -32,13 +32,13 @@ kramdown:
 
 owner:
   name: Chance P
-  logo: logo.png
+  logo: logo_vawh6v.png
   avatar: bernie.png
-  shoutout: "Meow"
+  shoutout: "1337"
   job:
   bio: "A security enthusiast. Likes cats."
   email: capearso@ualberta.ca
-  disqus-shortname: limbernie
+  disqus-shortname: thecapo
   twitter: thecapohs
   facebook: #username
   google:
@@ -66,7 +66,7 @@ owner:
   flickr: #username
   codepen: #username
   telegram: #username
-  reddit: limbernie
+  reddit: #username
 
 ####################################
 # Plugins
