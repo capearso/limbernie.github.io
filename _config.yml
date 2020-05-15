@@ -5,7 +5,7 @@
 title: TheCapo
 short: my security journey
 description: "all about my journey into security, walkthrough, CTF, reverse engineering, and exploit development."
-url: https://thecapo.com
+url: https://hackso.me
 keywords: ["security", "walkthrough", "CTF", "reverse engineering", "exploit development"]
 
 
@@ -13,7 +13,7 @@ keywords: ["security", "walkthrough", "CTF", "reverse engineering", "exploit dev
 # Jekyll configuration
 ###################################
 
-timezone:          EST
+timezone:          UTC
 markdown:          kramdown
 highlighter:       rouge
 excerpt_separator: <!--more-->
@@ -31,15 +31,15 @@ kramdown:
 ####################################
 
 owner:
-  name: Chance P
+  name: Bernie Lim
   logo: logo.png
   avatar: bernie.png
   shoutout: "Meow"
   job:
   bio: "A security enthusiast. Likes cats."
-  email: capearso@ualberta.ca
-  disqus-shortname: #username
-  twitter: thecapohs
+  email: limbernie@pm.me
+  disqus-shortname: limbernie
+  twitter: limbernie
   facebook: #username
   google:
     plus: #username
@@ -49,7 +49,7 @@ owner:
     ad-slot:
   bing-verify:
   keybase: limbernie
-  github: capearso
+  github: limbernie
   stackoverflow: #username
   linkedin: #username
   xing: #username
@@ -66,7 +66,7 @@ owner:
   flickr: #username
   codepen: #username
   telegram: #username
-  reddit: #username
+  reddit: limbernie
 
 ####################################
 # Plugins
