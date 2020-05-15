@@ -7,7 +7,7 @@ category: Walkthrough
 tags: ["Hack The Box", Obscurity, retired]
 comments: true
 image:
-  feature: obscurity-htb-walkthrough.jpg
+  feature: obscurity-htb-walkthrough_wx800n.jpg
   credit: PIRO4D / Pixabay
   creditlink: https://pixabay.com/illustrations/hall-stadium-obscure-space-1832930/
 ---
