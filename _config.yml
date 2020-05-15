@@ -13,7 +13,7 @@ keywords: ["security", "walkthrough", "CTF", "reverse engineering", "exploit dev
 # Jekyll configuration
 ###################################
 
-timezone:          UTC
+timezone:          EST
 markdown:          kramdown
 highlighter:       rouge
 excerpt_separator: <!--more-->
@@ -31,15 +31,15 @@ kramdown:
 ####################################
 
 owner:
-  name: Bernie Lim
+  name: Chance P
   logo: logo.png
   avatar: bernie.png
   shoutout: "Meow"
   job:
   bio: "A security enthusiast. Likes cats."
-  email: limbernie@pm.me
+  email: capearso@ualberta.ca
   disqus-shortname: limbernie
-  twitter: limbernie
+  twitter: thecapohs
   facebook: #username
   google:
     plus: #username
@@ -49,7 +49,7 @@ owner:
     ad-slot:
   bing-verify:
   keybase: limbernie
-  github: limbernie
+  github: capearso
   stackoverflow: #username
   linkedin: #username
   xing: #username
