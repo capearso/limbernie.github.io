@@ -3,10 +3,10 @@
 # Site wide configuration
 ###################################
 
-title: hacksome
-short: my security journey
+title: TheCapo
+short: Capture the Flag write ups
 description: "all about my journey into security, walkthrough, CTF, reverse engineering, and exploit development."
-url: https://hackso.me
+url: https://thecapo.com
 keywords: ["security", "walkthrough", "CTF", "reverse engineering", "exploit development"]
 
 
@@ -14,7 +14,7 @@ keywords: ["security", "walkthrough", "CTF", "reverse engineering", "exploit dev
 # Jekyll configuration
 ###################################
 
-timezone:          UTC
+timezone:          EST
 markdown:          kramdown
 highlighter:       rouge
 excerpt_separator: <!--more-->
@@ -32,15 +32,14 @@ kramdown:
 ####################################
 
 owner:
-  name: Bernie Lim
+  name: Chance P
   logo: logo.png
   avatar: bernie.png
-  shoutout: "Meow"
+  shoutout: "1337"
   job:
-  bio: "A security enthusiast. Likes cats."
-  email: limbernie@pm.me
-  disqus-shortname: limbernie
-  twitter: limbernie
+  bio: "A security enthusiast. Avid Gamer"
+  email: capearso@ualberta.ca
+  twitter: thecapo
   facebook: #username
   google:
     plus: #username
@@ -49,10 +48,10 @@ owner:
     ad-client:
     ad-slot:
   bing-verify:
-  keybase: limbernie
-  github: limbernie
+  keybase: #username
+  github: capearso
   stackoverflow: #username
-  linkedin: #username
+  linkedin: capearso
   xing: #username
   instagram: #username
   lastfm: #username
@@ -67,7 +66,6 @@ owner:
   flickr: #username
   codepen: #username
   telegram: #username
-  reddit: limbernie
 
 ####################################
 # Plugins
