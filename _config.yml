@@ -1,10 +1,9 @@
-
 ###################################
 # Site wide configuration
 ###################################
 
 title: TheCapo
-short: Capture the Flag write ups
+short: my security journey
 description: "all about my journey into security, walkthrough, CTF, reverse engineering, and exploit development."
 url: https://thecapo.com
 keywords: ["security", "walkthrough", "CTF", "reverse engineering", "exploit development"]
@@ -35,11 +34,12 @@ owner:
   name: Chance P
   logo: logo.png
   avatar: bernie.png
-  shoutout: "1337"
+  shoutout: "Meow"
   job:
-  bio: "A security enthusiast. Avid Gamer"
+  bio: "A security enthusiast. Likes cats."
   email: capearso@ualberta.ca
-  twitter: thecapo
+  disqus-shortname: #username
+  twitter: thecapohs
   facebook: #username
   google:
     plus: #username
@@ -48,10 +48,10 @@ owner:
     ad-client:
     ad-slot:
   bing-verify:
-  keybase: #username
+  keybase: limbernie
   github: capearso
   stackoverflow: #username
-  linkedin: capearso
+  linkedin: #username
   xing: #username
   instagram: #username
   lastfm: #username
@@ -66,6 +66,7 @@ owner:
   flickr: #username
   codepen: #username
   telegram: #username
+  reddit: #username
 
 ####################################
 # Plugins
@@ -80,5 +81,3 @@ plugins:
 
 paginate: 3
 paginate_path: "/:num/"
-
-theme: jekyll-theme-hacker
