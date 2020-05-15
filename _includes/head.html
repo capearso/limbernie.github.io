@@ -1,4 +1,4 @@
-{% assign cloudinary = "https://res.cloudinary.com/limbernie/image/upload/" %}
+{% assign cloudinary = "https://res.cloudinary.com/ddctbyujj/image/upload/" %}
 {% if page.title %}
   {% capture title %}{{ page.title }}{% endcapture %}
 {% elsif paginator.page != 1 %}
@@ -29,7 +29,7 @@
 {% endif %}
 
 {% if page.image.feature %}
-  {% capture image %}{{ cloudinary | append: 'f_auto,q_auto' }}/img/{{ page.image.feature }}{% endcapture %}
+  {% capture image %}{{ cloudinary }}/{{ page.image.feature }}{% endcapture %}
   {% capture card %}summary_large_image{% endcapture %}
   {% capture creator %}<meta name="twitter:creator" content="@{{ site.owner.twitter }}" />{% endcapture %}
 {% else %}
