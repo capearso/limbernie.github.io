@@ -2,7 +2,7 @@
 layout: post
 title: "Anthem: Try Hack Me Walkthrough"
 date: 2020-05-15 20:20:20 +0000
-last_modified_at: 2020-05-15 21:13:00 +0000
+last_modified_at: 2020-05-15 20:20:20 +0000
 category: Walkthrough
 tags: ["Try Hack Me", Anthem, Weekly Challenge]
 comments: true
@@ -141,6 +141,8 @@ We click on the we are hiring page and see that Jane Doe is the author and we ca
 {% include image.html image_alt="flag4_aznzrp.png" image_src="flag4_aznzrp.png" %}
 
 By following the steps for Flag One we can find Flag Four in the meta content on the IT poem page.
+
+## Exploiting the Box
 
 ### Getting `user.txt`
 
