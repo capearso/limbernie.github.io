@@ -103,7 +103,7 @@ gobuster dir -u http://10.10.15.205/diryoufound/ -w /usr/share/dirbuster/wordlis
 
 It looks like the scan returns a new directory from this path.
 
-{% include image.html image_alt="LianYuSecondDirb_s205xw.jpg" image_src="LianYuSecondDirb_s205xw.jpg" %}
+{% include image.html image_alt="LianYu/LianYuSecondDirb_s205xw.jpg" image_src="LianYu/LianYuSecondDirb_s205xw.jpg" %}
 
 Viewing the source of this page till us that we need a file that end with a certain extension. We can start a `wfuzz` scan to see if maybe we can find a file that ends in that extension.
 
