@@ -120,6 +120,8 @@ Using the codeword we found earlier. We can log into the `FTP` service.
 
 {% include image.html image_alt="LianYu/LianYuSecert_vsegfc.jpg" image_src="LianYu/LianYuSecert_vsegfc.jpg" %}
 
+## Exploiting the Box
+
 ### Getting `user.txt`
 
 ```
