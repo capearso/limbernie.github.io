@@ -124,7 +124,7 @@ div.post-meta {
 // Read More
 
 .read-more {
-	font-family: $font-family-serif !important;
+	//font-family: $font-family-serif !important;
 	a {
 		font-weight: normal !important;
 	}
@@ -163,8 +163,15 @@ div.post-meta {
 }
 
 #page {
-  padding-bottom: 10px; /* 50px; */
-  min-height: 70vh;
+  //@media (orientation: landscape) {
+  //    padding-bottom: 20px; /* 50px; */
+  //}
+  @media (min-height: 500px) {
+      min-height: 70vh;
+  }
+  @media (min-height: 1024px) {
+      min-height: 49vh;
+  }
   .page-header {
     margin: -1.2rem auto 50px;
   }
@@ -173,7 +180,6 @@ div.post-meta {
 .post-image-feature {
   margin-bottom: 40px;
   .feature-image {
-    width: 100%;
     border-radius: 0.4em;
   }
 }

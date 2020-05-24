@@ -1,10 +1,12 @@
-{% assign cloudinary = "https://res.cloudinary.com/ddctbyujj/image/upload/" %}
+{% assign cloudinary = "https://res.cloudinary.com/limbernie/image/upload/" %}
 {% if page.author %} {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.owner %} {% endif %}
 <div class="sidebar">
 <div class="container sidebar-sticky">
 <div class="cover-card">
   {% if author.logo %}
-  <img class="logo lazyload" data-src="{{ cloudinary }}/{{ author.logo }}" alt="Cat Silhouette">
+  <div class="logo">
+    <img class="lazyload" data-src="{{ cloudinary | append: 'f_auto,q_auto' }}/img/{{ author.logo }}" width="100" height="100" alt="">
+  </div>
   {% endif %}
   <div class="noavatar">
   <a href="https://keybase.io/{{ author.keybase }}/" class="author_name" target="_blank" rel="noreferrer">{{ author.name }}</a>

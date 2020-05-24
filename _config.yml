@@ -1,11 +1,12 @@
+
 ###################################
 # Site wide configuration
 ###################################
 
-title: TheCapo
+title: hacksome
 short: my security journey
 description: "all about my journey into security, walkthrough, CTF, reverse engineering, and exploit development."
-url: https://capearso.com
+url: https://hackso.me
 keywords: ["security", "walkthrough", "CTF", "reverse engineering", "exploit development"]
 
 
@@ -13,7 +14,7 @@ keywords: ["security", "walkthrough", "CTF", "reverse engineering", "exploit dev
 # Jekyll configuration
 ###################################
 
-timezone:          EST
+timezone:          UTC
 markdown:          kramdown
 highlighter:       rouge
 excerpt_separator: <!--more-->
@@ -31,25 +32,25 @@ kramdown:
 ####################################
 
 owner:
-  name: Chance P
-  logo: logo_vawh6v.png
+  name: Bernie Lim
+  logo: logo.png
   avatar: bernie.png
-  shoutout: "1337"
+  shoutout: "Meow"
   job:
   bio: "A security enthusiast. Likes cats."
-  email: capearso@ualberta.ca
-  disqus-shortname: thecapo
-  twitter: thecapohs
+  email: limbernie@pm.me
+  disqus-shortname: limbernie
+  twitter: limbernie
   facebook: #username
   google:
     plus: #username
-    analytics: UA-166781006-1
+    analytics: UA-113897290-2
     verify:
     ad-client:
     ad-slot:
   bing-verify:
-  keybase: #username
-  github: capearso
+  keybase: limbernie
+  github: limbernie
   stackoverflow: #username
   linkedin: #username
   xing: #username
@@ -66,7 +67,7 @@ owner:
   flickr: #username
   codepen: #username
   telegram: #username
-  reddit: #username
+  reddit: limbernie
 
 ####################################
 # Plugins
@@ -81,5 +82,3 @@ plugins:
 
 paginate: 3
 paginate_path: "/:num/"
-
-theme: jekyll-theme-hacker

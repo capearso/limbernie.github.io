@@ -354,10 +354,12 @@ pre code {
 .filename {
 	font-family: $font-family-monospace;
 	font-size: 0.81rem;
+    margin-top: 1.2rem;
 	span {
 		background: #494e58;
 		color: #ebeef2;
 		padding: 0 0.5rem;
         display: inline-block;
+        border-radius: 6px 6px 0 0;
 	}
 }

@@ -2,7 +2,7 @@
 layout: default
 ---
 
-{% assign cloudinary = "https://res.cloudinary.com/ddctbyujj/image/upload/" %}
+{% assign cloudinary = "https://res.cloudinary.com/limbernie/image/upload/" %}
 
 {% if page.author %}
 	{% assign author = page.author %}
@@ -16,13 +16,23 @@ layout: default
 
 {% if page.image.feature %}
 <div class="post-image-feature">
-<picture class="lazyload">
-  <source media="(max-width: 480px)" srcset="{{ cloudinary  }}/{{ page.image.feature }}"> 
-  <source media="(min-width: 800px)" srcset="{{ cloudinary }}/{{ page.image.feature }}"> 
-  <img class="feature-image lazyload" data-src=
-  "{{ cloudinary }}/{{ page.image.feature }}"
-  alt="{{ page.title | escape }}">
-</picture>
+	<img data-srcset=
+            {% if page.image.feature contains "http" %}
+			"{{ cloudinary | replace: 'upload', 'fetch' | append: 'w_480,ar_16:9,c_pad,f_auto,q_auto' }}/{{ page.image.feature }} 480w, 
+			 {{ cloudinary | replace: 'upload', 'fetch' | append: 'w_800,ar_16:9,c_pad,f_auto,q_auto' }}/{{ page.image.feature }}" 
+            {% else %}
+			"{{ cloudinary | append: 'w_480,ar_16:9,c_fill,f_auto,q_auto' }}/img/{{ page.image.feature }} 480w, 
+			 {{ cloudinary | append: 'w_800,ar_16:9,c_fill,f_auto,q_auto' }}/img/{{ page.image.feature }}" 
+            {% endif %}
+		 data-sizes="(max-width: 800px) 480px, 800px" 
+	     data-src=
+            {% if page.image.feature contains "http" %}
+			"{{ cloudinary | replace: 'upload', 'fetch' | append: 'w_480,ar_16:9,c_pad,f_auto,q_auto' }}/{{ page.image.feature }}" 
+            {% else %}
+			"{{ cloudinary | append: 'w_480,ar_16:9,c_fill,f_auto,q_auto' }}/img/{{ page.image.feature }}" 
+            {% endif %}
+	     class="feature-image lazyload" 
+	     alt="" width="800" height="450">
   {% if page.image.credit %}
   <span class="image-credit"><a href="{{ page.image.creditlink  }}">{{ page.image.credit }}</a></span>
   {% endif %}
@@ -40,7 +50,7 @@ layout: default
     <div class="post-meta">
 			<div class="avatar-box">
 			{% if author.avatar %}
-			<img class="avatar lazyload" data-src="{{ cloudinary }}/{{ author.avatar }}" alt="{{ author.avatar }}" title="{{ author.shoutout }}">
+			<img class="avatar lazyload" data-src="{{ cloudinary | append: 'w_96,f_auto,q_auto' }}/img/{{ author.avatar }}" alt="" title="{{ author.shoutout }}" width="100" height="100">
 			{% endif %}
 			</div>
 			<div>

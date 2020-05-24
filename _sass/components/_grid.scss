@@ -2,7 +2,7 @@
   text-align: center;
   padding: 1rem;
   color: rgba(255,255,255,.5);
-  background-color: #f5f5f5;
+  background-color: #eaecf0; // #f5f5f5;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,7 +14,7 @@
     top: 0;
     left: 0;
     bottom: 0;
-    width: 19.0rem;
+    width: 20.0rem;
     z-index: 10;
     display: none;
     -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
@@ -54,7 +54,7 @@
 }
 
 @media all and (orientation: landscape) {
-	.sidebar { 
+	.content, .sidebar { 
         height: 100vh; /* fallback for browsers that don't support custom properties */
         height: calc(var(--vh, 1vh) * 100);
     }
