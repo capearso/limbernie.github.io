@@ -60,7 +60,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 Appears to be some kind of `http` service. Here's how it looks like.
 
-{% include image.html image_alt="WonderLand/WonderlandFirstPage_elolsj.jpg" image_src="WonderLand/WonderlandFirstPage_elolsj.jpg" %}
+{% include image.html image_alt="WonderLand/WonderlandWebHome_msjm15.jpg" image_src="WonderLand/WonderlandWebHome_msjm15.jpg" %}
 
 First things first we do a `gobuster` scan.
 
@@ -104,7 +104,7 @@ We view the source of this page and it gives us what looks to be some login cred
 ssh alice@10.10.200.195
 ```
 
-Since we have the alice password. We run a sudo -l to see if we can run any commands on the box.
+Since we have the alice password. We run a sudo -l to see if we can run any commands on the box. We can also get the user flag by doing cat /root/user.txt at this point or grab it with root at the end of the challenge.
 
 {% include image.html image_alt="WonderLand/WonderlandAliceSudo_d5tisn.jpg" image_src="WonderLand/WonderlandAliceSudo_d5tisn.jpg" %}
 
@@ -159,6 +159,7 @@ Doing this we see our root.txt flag in the Alice directory!
 We also can navigate to /root and get our user.txt flag.
 
 {% include image.html image_alt="WonderLand/WonderLandUser_gnpd6i.jpg" image_src="WonderLand/WonderLandUser_gnpd6i.jpg" %}
+
 
 :dancer:
 
