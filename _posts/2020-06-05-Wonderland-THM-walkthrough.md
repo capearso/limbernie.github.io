@@ -110,7 +110,7 @@ Since we have the alice password. We run a sudo -l to see if we can run any comm
 
 We see we can run python3.6 as rabbit with a certain python script. We also see in the script it imports random. We can do something called python library hijacking. If we place a random.py file in the same directory when import random runs it will use our python file instead of the random.py library python file.
 
-{% include image.html image_alt="WonderLand/WonderLandAlicePython_bxevcs.jpg" image_src="WonderLand/WonderLandAlicePython_bxevcs.jpg" %}
+{% include image.html image_alt="WonderLand/WonderLandAlicePython_q8wxjc.jpg" image_src="WonderLand/WonderLandAlicePython_q8wxjc.jpg" %}
 
 
 ```
