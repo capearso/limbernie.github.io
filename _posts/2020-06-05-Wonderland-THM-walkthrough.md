@@ -122,7 +122,7 @@ sudo -u rabbit /usr/bin/python3.6 /home/alice/walrus_and_the_carpenter.py
 
 #### Getting madhatter
 
-Now we move over to /home/rabbit. We see a binary called teaTime. When we run it the binary shows the following display.
+Now we move over to /home/rabbit. We see a binary called teaParty. When we run it the binary shows the following display.
 
 {% include image.html image_alt="WonderLand/wonderlandrabbitteaparty_ljq5f2.jpg" image_src="WonderLand/wonderlandrabbitteaparty_ljq5f2.jpg" %}
 
