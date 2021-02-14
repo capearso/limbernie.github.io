@@ -1,173 +1,21 @@
 ---
 layout: default
 ---
-
-{% assign cloudinary = "https://res.cloudinary.com/ddctbyujj/image/upload/" %}
-
-{% if page.author %}
-	{% assign author = page.author %}
-{% else %}
-	{% assign author = site.owner %}
-{% endif %}
-
-<a class="btn" href="{{ site.url }}/">
-	Home
-</a>
-
-{% if page.image.feature %}
-<div class="post-image-feature">
-<picture class="lazyload">
-  <source media="(max-width: 480px)" srcset="{{ cloudinary  }}/{{ page.image.feature }}"> 
-  <source media="(min-width: 800px)" srcset="{{ cloudinary }}/{{ page.image.feature }}"> 
-  <img class="feature-image lazyload" data-src=
-  "{{ cloudinary }}/{{ page.image.feature }}"
-  alt="{{ page.title | escape }}">
-</picture>
-  {% if page.image.credit %}
-  <span class="image-credit"><a href="{{ page.image.creditlink  }}">{{ page.image.credit }}</a></span>
-  {% endif %}
-</div>
-{% endif %}
-
-<div id="post">
-  <header class="post-header">
-		{% if page.subtitle %}
-			{% assign title = page.subtitle %}
-		{% else %}
-			{% assign title = page.title %}
-		{% endif %}
-    <h1 title="{{ title }}">{{ title }}</h1>
-    <div class="post-meta">
-			<div class="avatar-box">
-			{% if author.avatar %}
-			<img class="avatar lazyload" data-src="{{ cloudinary }}/{{ author.avatar }}" alt="{{ author.avatar }}" title="{{ author.shoutout }}">
-			{% endif %}
-			</div>
-			<div>
-				<div>
-					{% if author %}
-					<div>
-						<span class="post-author">
-    					{{ author.name }}
-						</span>
-					</div>
-					<div>
-						<span class="post-author-bio">
-							{{ author.bio }}
-						</span>
-					</div>
-					{% endif %}
-				</div>
-				<div>
-					<span class="post-date">
-						{{ page.date | date: "%-d %b %Y" }}
-					</span>
-					<span class="dot"></span>
-					{% include read_time.html %}
-					{% if site.owner.disqus-shortname and page.comments == true %}
-					<span class="dot"></span>
-					<a href="{{ page.url | append: '#disqus_thread' }}">0 Comments</a>
-					{% endif %}
-				</div>
-			</div>
-    </div>
-
-  </header>
-
-  {% if page.protect %}
-  <div id="encrypted_content">
-      <form id="encrypt_form" action="#" method="post">
-          <input id="encrypt_password" type="password" name="password" placeholder="HTB root flag or equivalent" size="30" required autocomplete="off" />
-          <input type="submit" value="Unlock" />
-      </form>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
-      <script>
-          document.getElementById('encrypt_form').addEventListener('submit', function(e) {
-              e.preventDefault();
-              var passphrase = document.getElementById('encrypt_password').value,
-              readTime       = '{{ page.read_time }}',
-              encryptedMsg   = '{{ page.encrypted }}',
-              encryptedHMAC  = encryptedMsg.substring(0, 64),
-              encryptedHTML  = encryptedMsg.substring(64),
-              decryptedHMAC  = CryptoJS.HmacSHA256(encryptedHTML, CryptoJS.SHA256(passphrase).toString()).toString();
-
-              if (decryptedHMAC !== encryptedHMAC) {
-                  alert('Bad passphrase!');
-                  return;
-              }
-
-              var setInnerHTML = function(elm, html) {
-                    elm.innerHTML = html;
-                    Array.from(elm.querySelectorAll("script")).forEach( oldScript => {
-                            const newScript = document.createElement("script");
-                            Array.from(oldScript.attributes)
-                              .forEach( attr => newScript.setAttribute(attr.name, attr.value) );
-                            newScript.appendChild(document.createTextNode(oldScript.innerHTML));
-                            oldScript.parentNode.replaceChild(newScript, oldScript);
-                          });
-              }
-
-              var plainHTML = CryptoJS.AES.decrypt(encryptedHTML, passphrase).toString(CryptoJS.enc.Utf8),
-                  encryptedContent = document.getElementById('encrypted_content');
-                  setInnerHTML(encryptedContent, plainHTML);
-                  encryptedContent.id = 'decrypted_content';
-              document.querySelector('.read-time').textContent = readTime;
-          });
-      </script>
-      <article class="post-content">
-          {{ content }}
-      </article>
-  </div>
-  {% else %}
-  <div id="unencrypted_content">
-      <article class="post-content">
-          {{ content }}
-      </article>
-  </div>
-  {% endif %}
-</div>
-
-<div class="share-buttons">
-  <h6>
-      Share this on:
-  </h6>
-  <ul>
-    <li>
-      <a href="https://twitter.com/intent/tweet?text={{ site.url }}{{ page.url }}" class="twitter btn social" title="Share on Twitter" rel="nofollow noreferrer" target="_blank"><i class="fab fa-twitter"></i><span> Twitter</span></a>
-    </li>
-		<li>
-			<a href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ page.url }}" class="linkedin btn social" title="Share on LinkedIn" rel="nofollow noreferrer" target="_blank"><i class="fab fa-linkedin-in"></i><span>LinkedIn</span></a>
-		</li>
-    <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" class="facebook btn social" title="Share on Facebook" rel="nofollow noreferrer" target="_blank"><i class="fab fa-facebook-f"></i><span> Facebook</span></a>
-    </li>
-    <li>
-      <a href="https://news.ycombinator.com/submitlink?u={{ site.url }}{{ page.url }}" class="hacker-news btn social" title="Share on Hacker News" rel="nofollow noreferrer" target="_blank"><i class="fab fa-hacker-news"></i><span>Hacker News</span></a>
-    </li>
-    <li>
-      <a href="https://www.reddit.com/submit?url={{ site.url }}{{ page.url }}" class="reddit btn social" title="Share on Reddit" rel="nofollow noreferrer" target="_blank"><i class="fab fa-reddit-alien"></i><span> Reddit</span></a>
-    </li>
-  </ul>
-</div><!-- end share-buttons -->
-
-{% if site.owner.disqus-shortname and page.comments == true %}
-<div id="disqus_thread"><div id="disqus_thread_loaded">Loading Comments</div></div>
-{% include disqus.html %}
-{% endif %}
-
-<!-- previous, next post -->
-<div class="postination">
-	{% if page.previous.url %}
-		<a class="prev" href="{{ page.previous.url }}" rel="prev">
-			<h5><i class="fas fa-arrow-left"></i> Previous</h5>
-			<span>{{ page.previous.title }}</span>
-		</a>
+<br>
+<h1>{{ page.title }}</h1>   
+<p><i class="fa fa-calendar post-meta"></i> &nbsp;{{ page.date | date: "%b %-d, %Y" }} &nbsp; Post By: {{page.author}}</p>
+<article class="blog-post-small blog-post-content">
+	{{ content }}
+</article>
+<div class="post-categories">
+	{% if post %}
+		{% assign categories = post.categories %}
+	{% else %}
+		{% assign categories = page.categories %}
 	{% endif %}
-	{% if page.next.url %}
-		<a class="next" href="{{ page.next.url }}" rel="next">
-			<h5>Next <i class="fas fa-arrow-right"></i></h5>
-			<span>{{ page.next.title }}</span>
-		</a>
-	{% endif %}
+	{% for category in categories %}
+	<p>Categories: <a href="{{site.baseurl}}/categories/#{{category|slugize}}">{{category}}</a></p>
+	{% unless forloop.last %}&nbsp;{% endunless %}
+	{% endfor %}
 </div>
-<div class="back-to-top" style="display: none;"><i class="fas fa-chevron-up"></i><div style="margin-top:-10px;">top</div></div>
+<br>

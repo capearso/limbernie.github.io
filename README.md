@@ -1,25 +1,39 @@
-# Introduction
+![Logo](https://github.com/patrickmfsd/Miniplistic/blob/master/images/site-logo.png "Miniplistic Logo")
 
-Potion is a customized Jekyll theme partially derived from the work of others,
-namely:
+# Miniplistic Theme 
 
-* [Leonids](https://github.com/renyuanz/leonids) by Renyuan Zou
-* [Hyde](https://github.com/poole/hyde) by Mark Otto
-* [So Simple](https://github.com/mmistakes/so-simple-theme) by Micheal Rose
-* [Better pagination for Jekyll](https://github.com/timble/jekyll-pagination) By Timble
+Created by: Patrick Mifsud
 
-The theme represents a concoction of the parts I like about from the other
-themes, hence the name Potion. Also, I thought it's kinda cool when
-the footer says "Powered by Jekyll and Potion". :wink:
+## Contents
+1. [About](#about)
+2. [Screenshots](#screenshots)
+	1. [Normal Mode](#normal-mode)
+	2. [Dark Mode](#dark-mode)
+3. [How To Create A Post](https://github.com/patrickmfsd/Miniplistic/wiki/Post-Creation)
+4. [Change Log](https://github.com/patrickmfsd/Miniplistic/wiki/Change-Log)
 
-I started with Leonids and loved the sidebar. The sidebar was clean,
-simple and tastefully designed. When I decided to include a more responsive
-layout, Hyde came to mind and I adopted it. And when I decided to add
-pagination to manage the increasing blog posts, the pagination from 
-So Simple and Timble inspired me so much, I ended up including that 
-into the mix as well.
+## About
 
-All mistakes are mine alone.
+Welcome to the repository for the Miniplistic Theme.
 
-_Did you know that Dr. Jekyll originally developed the
-potion to suppress Mr. Hyde from appearing, not the other way round?_
+This repository contains the files used for generating the website. The theme is designed for Jekyll, a static site generator and uses GitHub Pages for hosting. 
+
+Features of the site:
+
+- Custom Dark Mode
+- Responsive Theme
+- Easy Navigation
+- Uses Bootstrap 
+- Uses Animate.css
+- Pagination
+- Post Categories 
+- And More..
+
+## Screenshots
+
+### Normal Mode
+![Normal Mode](https://github.com/patrickmfsd/Miniplistic/blob/master/screenshots/LightMode.png)
+
+
+### Dark Mode
+![Dark Mode](https://github.com/patrickmfsd/Miniplistic/blob/master/screenshots/DarkMode.png)

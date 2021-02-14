@@ -1,47 +1,49 @@
 ---
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
-@charset "UTF-8";
+@charset "utf-8";
 
-// Mixins
-@import "components/mixins";
 
-// Variables
-@import "components/variables";
 
-// Reset
-@import "components/normalize";
+// Our variables
+$base-font-family: Helvetica, Arial, sans-serif;
+$base-font-size:   16px;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.5;
 
-// Components
-@import "components/global";
-@import "components/helpers";
-@import "components/grid";
-@import "components/typography";
-@import "components/buttons";
-@import "components/syntax-highlighting";
+$spacing-unit:     30px;
 
-// Pages styling
-@import "pages/layout";
-@import "pages/tags";
-@import "pages/archive";
-@import "pages/post";
+$text-color:       #111;
+$background-color: #f4f4f4;
+$brand-color:      #2a7ae2;
 
-// Custom CSS
-code {
-  white-space: pre-wrap;
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
+
+// Width of the content area
+$content-width:    800px;
+
+$on-palm:          750px;
+$on-laptop:        1000px;
+
+
+
+// Using media queries with like this:
+// @include media-query($on-palm) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
 }
 
-// Variables for dark mode colors 
- 
-$main-background-color: hsl(0, 0, 1%); // hsl(0, 0, 99%)
-$main-text-color:  hsl(0, 0, 90%); // hsl(0, 0, 10%)
-$light-text-color: hsl(0, 0, 70%); // hsl(0, 0, 30%)
-$lighter-text-color: hsl(0, 0, 55%); // hsl(0, 0, 45%)
-$dark-text-color: hsl(0, 0, 95%); // hsl(0, 0, 5%)
-$light-border-color: hsl(0, 0, 20%); // hsl(0, 0, 80%)
-$underline-color: hsl(0, 0, 50%); // hsl(0, 0, 60%)
-$box-background-color: hsl(0, 0, 10%); // hsl(0, 0, 95%)
-$highlight-color: hsl(0,0,40%); // hsl(0, 0, 60%)
-
-@import "jekyll-pagination"
-
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+        "site",
+        "syntax-highlighting"
+;
