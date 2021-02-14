@@ -1,17 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   {% include head.html %}
-  <body>	
-    {% include header.html %}
-	<!-- Content -->
-    <div class="row animated fadeIn bodycontent">
-	    <div>
-			{{ content }}
-	    </div>
+  <body style="overflow-y: auto">
+    <!-- CSS files -->
+    <noscript id="deferred">
+<style type="text/css">@font-face{font-family:'Font Awesome';src:url(/assets/fonts/fontawesome.woff2) format('woff2'),url(/assets/fonts/fontawesome.woff) format('woff');font-weight:400;font-style:normal;font-display:block}[class*=" fa-"],[class^=fa-]{font-family:'Font Awesome'!important;speak:none;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.fa-linkedin:before{content:"\f08c"}.fa-twitter:before{content:"\f099"}.fa-facebook:before{content:"\f09a"}.fa-github:before{content:"\f09b"}.fa-linkedin-in:before{content:"\f0e1"}.fa-reddit:before{content:"\f1a1"}.fa-hacker-news:before{content:"\f1d4"}.fa-reddit-alien:before{content:"\f281"}.fa-facebook-f:before{content:"\f39e"}.fa-search:before{content:"\f002"}.fa-arrow-left:before{content:"\f060"}.fa-arrow-right:before{content:"\f061"}.fa-chevron-up:before{content:"\f077"}.fa-folder:before{content:"\f07b"}.fa-rss:before{content:"\f09e"}.fa-envelope:before{content:"\f0e0"}.fa-ellipsis-h:before{content:"\f141"}.fa-ellipsis-v:before{content:"\f142"}.fa-archive:before{content:"\f187"}.fa-external-link-alt:before{content:"\f35d"}.fa-prescription-bottle-alt:before{content:"\f486"}</style>
+    </noscript>
+    <!-- Defer loading -->
+	<script>
+      var loadDeferredStyles = function() {
+	    var addStylesNode = document.getElementById("deferred");
+	    var replacement = document.createElement("div");
+	    replacement.innerHTML = addStylesNode.textContent;
+	    document.body.appendChild(replacement)
+	    addStylesNode.parentElement.removeChild(addStylesNode);
+	  };
+	  var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+	    window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+	  if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+	  else window.addEventListener('load', loadDeferredStyles);
+	</script>	                                                                                    
+  	<div class="menu"><i class="fas fa-ellipsis-v"></i></div>
+      {% include sidebar.html %}
+    <div class="overlay" style="visibility: hidden;width: 100%;height: 100%;position: fixed;top: 0;right: 0;bottom: 0;left: 0;z-index: 9;background: rgba(0,0,0,0.5);"></div>
+    {% if page.path contains "index.html" %}
+    <div class="content container adjust">
+    {% else %}
+    <div class="content container">
+    {% endif %}
+      {{ content }}
+      {% include footer.html %}
     </div>
-    <div class="col-md-12">
-    	{% include footer.html %}
-    </div>
-    	{% include include_js.html %}   
+    {% include js.html %}
+
   </body>
 </html>

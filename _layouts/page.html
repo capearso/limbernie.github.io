@@ -1,8 +1,69 @@
 ---
 layout: default
 ---
-<br>
-<h2>{{ page.title }}</h2>
-<article class="blog-post-small blog-post-content">
-	{{ content }}
-</article>
+
+  <div id="page">
+    <header class="page-header">
+      <h2><i class="fas fa-{{ page.title | downcase | replace: "categories", "folder" }}"></i> {{ page.title }}</h2>
+    </header>
+
+    <article class="page-content">
+      {{ content }}
+    </article>
+
+
+  </div><!-- end page content -->
+
+
+  {% if site.owner.disqus-shortname and page.comments == true %}
+  <div id="disqus_thread"></div>
+  {% include disqus.html %}
+  {% endif %}
+
+{% if page.back-to-top %}
+<div class="back-to-top" style="display: none;"><i class="fas fa-chevron-up"></i><div style="margin-top:-10px;">top</div></div>
+{% endif %}
+
+<script type="text/javascript">
+
+// looks for the ?darkmode parameter 
+// sets global variable darkMode to true or false
+
+const enteredURL = window.location.href;
+if (enteredURL.includes('?darkmode')) {
+	var darkMode = true; 
+	} else {
+        var darkMode = false;
+    }
+
+// these variables create the URL for switcher in the nav menu 
+
+const darkModeLink = enteredURL + "?darkmode";
+const lightModeLink = enteredURL.replace('?darkmode', '');
+
+// loop through links on page to add '?darkmode' to internal links 
+	
+if (darkMode) {
+	document.getElementById('CSS').href="/css/darkmode.css";
+	const allLinks = document.getElementsByTagName("a");
+	for (let i = 0; i < allLinks.length; i++) {
+		if (allLinks[i].href.includes('https://derekkedziora.com/')
+			|| allLinks[i].href.includes('http://127.0.0.1:4000/')) {
+			allLinks[i].href = allLinks[i].href + '?darkmode';
+		}
+	}
+
+// it's important for this to come after internal links have '?darkmode' added
+// otherwise the switch in the nav menu to turn on light mode won't work! 
+
+	document.getElementById('colorChanger').innerHTML="Light Mode";
+	document.getElementById('colorChanger').href=lightModeLink;	
+  
+// sets nav switcher to allow dark mode to be enabled 
+
+if (darkMode === false) {
+	document.getElementById('CSS').href="/css/style.css";
+	document.getElementById('colorChanger').innerHTML="Dark Mode";
+	document.getElementById('colorChanger').href=darkModeLink;
+}
+</script>

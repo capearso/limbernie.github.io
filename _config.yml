@@ -1,71 +1,88 @@
-# This file contains configuration flags for the site
+###################################
+# Site wide configuration
+###################################
 
-# Name of your site
-title: Miniplistic
+title: TheCapo
+short: my security journeyF
+description: "all about my journey into security, walkthrough, CTF, reverse engineering, and exploit development."
+url: https://capearso.com
+keywords: ["security", "walkthrough", "CTF", "reverse engineering", "exploit development"]
 
-# Site Tagline 
-tagline: A simple Jekyll Theme
 
-# Site Description 
-description: A simple Jekyll Theme
+###################################
+# Jekyll configuration
+###################################
 
-# Your website URL 
-url: https://patrickmfsd.github.io
+timezone:          EST
+markdown:          kramdown
+highlighter:       rouge
+excerpt_separator: <!--more-->
+permalink:         /:title/
 
-# If you're hosting your site at a Project repository on GitHub pages
-# (http://yourusername.github.io/repository-name)
-# and NOT your User repository (http://yourusername.github.io)
-# then add in the baseurl here, like this: "/repository-name"
-baseurl: "/Miniplistic"
- 
-# Banner Text
-bannertext: "This is a text banner, edit in _config.yml"
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  enable_coderay: false
 
-# Favicon
-favicon: /images/favicon.png
+####################################
+# Site Owner configuration
+####################################
 
-# Site Logo
-sitelogo: /images/site-logo.png
+owner:
+  name: Chance P
+  logo: logo_vawh6v.png
+  avatar: bernie.png
+  shoutout: "1337"
+  job:
+  bio: "A security enthusiast. Likes cats."
+  email: capearso@ualberta.ca
+  disqus-shortname: thecapo
+  twitter: thecapohs
+  facebook: #username
+  google:
+    plus: #username
+    analytics: UA-166781006-1
+    verify:
+    ad-client:
+    ad-slot:
+  bing-verify:
+  keybase: #username
+  github: capearso
+  stackoverflow: #username
+  linkedin: #username
+  xing: #username
+  instagram: #username
+  lastfm: #username
+  tumblr: #username
+  pinterest: #username
+  foursquare: #username
+  steam: #username
+  dribbble: #username
+  youtube: #username
+  soundcloud: #username
+  weibo: #username
+  flickr: #username
+  codepen: #username
+  telegram: #username
+  reddit: #username
 
-# Footer Logo
-footerlogo: /images/footerlogo.png
+####################################
+# Plugins
+####################################
 
-# Social Links
-github:  https://github.com/patrickmfsd/
-facebook: 
-twitter:
-email: 
-
-# Nav Bar Links (Add new or change pages if your site requires it)
-blog: "/" 
-projects: "/projects"
-Membership: "/404"
-contact: "/contact"
-about: "/about"
-
-# !! You don't need to change any of the configuration flags below !!
-
-# Pagenate support
-paginate: 5
-paginate_path: "/page:num/"
-
-permalink: /:title/
-
-# This will require each of these plugins automatically.
 plugins:
-  - jekyll-paginate 
+  - jemoji
+  - jekyll-feed
+  - jekyll-mentions
+  - jekyll-sitemap
+  - jekyll-paginate
 
-# Build settings
-markdown: kramdown
+paginate: 3
+paginate_path: "/:num/"
 
-# Exclude these files from your production _site
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - LICENSE
-  - README.md
-  - CNAME
+#theme: jekyll-theme-hacker
+theme: jekyll-theme-midnight
 
-collections:
-  meetings:
-    output: true
+
