@@ -83,5 +83,6 @@ paginate: 3
 paginate_path: "/:num/"
 
 #theme: jekyll-theme-hacker
-remote_theme: "dracula/gh-pages"
+theme: jekyll-theme-midnight
+
 
