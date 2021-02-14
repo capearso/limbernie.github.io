@@ -3,7 +3,7 @@
 ###################################
 
 title: TheCapo
-short: my security journey
+short: my security journeyF
 description: "all about my journey into security, walkthrough, CTF, reverse engineering, and exploit development."
 url: https://capearso.com
 keywords: ["security", "walkthrough", "CTF", "reverse engineering", "exploit development"]
@@ -82,4 +82,6 @@ plugins:
 paginate: 3
 paginate_path: "/:num/"
 
-theme: jekyll-theme-hacker
+#theme: jekyll-theme-hacker
+remote_theme: "dracula/gh-pages"
+
